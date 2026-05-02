@@ -26,14 +26,14 @@ const agents: Agent[] = [
   {
     id: '1',
     name: 'Thomas',
-    role: 'Chief of Staff AI',
+    role: 'Chief of Staff & Consigliere',
     type: 'primary',
     model: 'Claude Opus 4',
-    device: 'Cloud (Anthropic)',
+    device: 'DigitalOcean (thomas-server)',
     status: 'online',
-    avatar: '🎯',
-    description: 'Primary AI assistant - consigliere, strategic advisor, and operator. Handles all main communication and coordination.',
-    capabilities: ['Strategy', 'Operations', 'Research', 'Writing', 'Development', 'Memory'],
+    avatar: '🧠',
+    description: 'Primary AI operator. Coordinates all agents, executes strategy, manages memory system. Named after Justin\'s uncle.',
+    capabilities: ['Strategy', 'Operations', 'Research', 'Coordination', 'Memory', 'Development'],
   },
   {
     id: '2',
@@ -42,8 +42,74 @@ const agents: Agent[] = [
     type: 'human',
     status: 'online',
     avatar: '👨‍💼',
-    description: 'Solo founder handling strategy, UI/UX, and product vision. Goal: freedom, travel, Italy.',
-    capabilities: ['Vision', 'Decisions', 'UI/UX', 'Sales', 'Relationships'],
+    description: 'Solo founder. Full-time. 40-50+ hrs/week. Handles vision, UI/UX, product, and key relationships.',
+    capabilities: ['Vision', 'Decisions', 'UI/UX', 'Sales', 'Product'],
+  },
+  {
+    id: '10',
+    name: 'Steve',
+    role: 'CMO',
+    type: 'sub-agent',
+    model: 'Claude Opus 4',
+    status: 'idle',
+    avatar: '📢',
+    description: 'Marketing lead. Case studies, spotlight specs, brand voice. Two reference pillars loaded (Ras Mic + Cody Schneider).',
+    capabilities: ['Marketing', 'Content', 'Brand', 'Case Studies'],
+  },
+  {
+    id: '11',
+    name: 'Scout',
+    role: 'Sales Ops',
+    type: 'sub-agent',
+    model: 'Claude Opus 4',
+    status: 'idle',
+    avatar: '🔍',
+    description: 'Sales operations. 250 contacts staged (201 CO, 49 KY). Nothing sent — cold email declared dead. Pivoting to distributor support.',
+    capabilities: ['Prospecting', 'Contact Research', 'CRM', 'Outreach'],
+  },
+  {
+    id: '12',
+    name: 'Sheila',
+    role: 'Startup Smartup Ops',
+    type: 'sub-agent',
+    model: 'Claude Opus 4',
+    status: 'idle',
+    avatar: '🚀',
+    description: 'Startup Smartup operations. HubSpot recon done: 6,211 contacts, 1,158 warm/SS-relevant. Reconnect list staged.',
+    capabilities: ['HubSpot', 'Outreach', 'Enrichment Programs', 'Contacts'],
+  },
+  {
+    id: '13',
+    name: 'Atlas',
+    role: 'CDO (Chief Data Officer)',
+    type: 'sub-agent',
+    model: 'Claude Opus 4',
+    status: 'idle',
+    avatar: '📊',
+    description: 'Data operations. Schema built (4 tables), 21 metric definitions, week 1 baseline captured. Sunday snapshots + Monday briefings.',
+    capabilities: ['Analytics', 'Metrics', 'Reporting', 'Data'],
+  },
+  {
+    id: '14',
+    name: 'Wall-E',
+    role: 'Organizational Memory',
+    type: 'sub-agent',
+    model: 'Claude Opus 4',
+    status: 'online',
+    avatar: '🤖',
+    description: 'Cross-agent memory and alignment. Polls every 30 min, extracts decisions/facts/corrections, triages by priority (Red/Yellow/Blue).',
+    capabilities: ['Memory', 'Alignment', 'Cross-Agent Sync', 'Corrections'],
+  },
+  {
+    id: '15',
+    name: 'Reed',
+    role: 'Research Agent',
+    type: 'sub-agent',
+    model: 'Claude Opus 4',
+    status: 'idle',
+    avatar: '📚',
+    description: 'Deep research. State adoption windows, market scans, competitive analysis. Spawned on-demand by Thomas.',
+    capabilities: ['Research', 'Analysis', 'Web Scraping', 'Reports'],
   },
   {
     id: '3',
@@ -62,7 +128,7 @@ const agents: Agent[] = [
     type: 'human',
     status: 'offline',
     avatar: '👨‍💻',
-    description: 'Romania-based dev team handling backend wiring and implementation.',
+    description: 'Romania-based dev team. Backend wiring, platform implementation, PFL Academy infrastructure.',
     capabilities: ['Backend', 'Integration', 'Deployment'],
   },
 ];
@@ -71,9 +137,9 @@ const missionStatement = {
   vision: "Build an autonomous organization of AI agents that produce value 24/7",
   goal: "Enable freedom, travel, and the Italian lifestyle - 3 months/year in Italy",
   targets: {
-    immediate: "$10k/month",
-    starting: "$200-300k ARR",
-    ultimate: "$3M+ ARR",
+    immediate: "$500k ARR",
+    starting: "$200-300k ARR (first milestone)",
+    ultimate: "$1M ARR",
   },
 };
 
@@ -209,16 +275,43 @@ export default function TeamPage() {
         ))}
       </div>
 
-      {/* Future Sub-Agents */}
+      {/* AI Sub-Agents */}
       <div className="mt-12">
-        <h2 className="text-lg font-semibold text-[--secondary] mb-4">Sub-Agents (Planned)</h2>
-        <div className="card p-6 border-dashed border-2 border-[--border] bg-transparent">
-          <div className="text-center text-[--text-muted]">
-            <CpuChipIcon className="w-12 h-12 mx-auto mb-3 opacity-50" />
-            <p className="font-medium">No sub-agents configured yet</p>
-            <p className="text-sm mt-1">Sub-agents can be spun up for specialized tasks like research, development, or content creation.</p>
-            <button className="btn-secondary mt-4 text-sm">+ Add Sub-Agent</button>
-          </div>
+        <h2 className="text-lg font-semibold text-[--secondary] mb-4">AI Agents</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {agents.filter(a => a.type === 'sub-agent').map((agent) => (
+            <div key={agent.id} className="card p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 rounded-xl bg-[--primary-light] flex items-center justify-center text-xl">
+                  {agent.avatar}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-semibold text-[--secondary]">{agent.name}</h3>
+                    <div className={`w-2 h-2 rounded-full ${
+                      agent.status === 'online' ? 'bg-[--accent]' :
+                      agent.status === 'idle' ? 'bg-amber-400' : 'bg-gray-300'
+                    }`} />
+                  </div>
+                  <p className="text-xs text-[--text-muted]">{agent.role}</p>
+                </div>
+              </div>
+              <p className="text-xs text-[--text-secondary] mb-3">{agent.description}</p>
+              {agent.model && (
+                <div className="flex items-center gap-2 text-xs text-[--text-muted] mb-2">
+                  <CpuChipIcon className="w-4 h-4" />
+                  {agent.model}
+                </div>
+              )}
+              <div className="flex flex-wrap gap-1">
+                {agent.capabilities.map((cap) => (
+                  <span key={cap} className="text-[10px] bg-[--background] text-[--text-muted] px-2 py-0.5 rounded">
+                    {cap}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

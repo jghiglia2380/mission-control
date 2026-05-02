@@ -1,0 +1,165 @@
+{
+  "channels": [
+    {
+      "id": "nate-b-jones",
+      "name": "Nate B Jones",
+      "youtubeUrl": "https://www.youtube.com/@NateBJones",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-17n9iuUQPylguM1d-lQ",
+      "category": "ai",
+      "agentRouting": [
+        "Thomas",
+        "Justin"
+      ],
+      "priority": "high",
+      "channelId": "UC0C-17n9iuUQPylguM1d-lQ"
+    },
+    {
+      "id": "the-ai-advantage",
+      "name": "The AI Advantage",
+      "youtubeUrl": "https://www.youtube.com/@aiadvantage",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHhYXsLBEVVnbvsq57n1MTQ",
+      "category": "ai",
+      "agentRouting": [
+        "Thomas"
+      ],
+      "priority": "medium",
+      "channelId": "UCHhYXsLBEVVnbvsq57n1MTQ"
+    },
+    {
+      "id": "the-mit-monk",
+      "name": "theMITmonk",
+      "youtubeUrl": "https://www.youtube.com/@theMITmonk",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC4ZVkG3RQPzvZk7alIVjcCg",
+      "category": "ai",
+      "agentRouting": [
+        "Thomas",
+        "Justin"
+      ],
+      "priority": "medium",
+      "channelId": "UC4ZVkG3RQPzvZk7alIVjcCg"
+    },
+    {
+      "id": "greg-isenberg",
+      "name": "Greg Isenberg",
+      "youtubeUrl": "https://www.youtube.com/@GregIsenberg",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPjNBjflYl0-HQtUvOx0Ibw",
+      "category": "startup",
+      "agentRouting": [
+        "Steve",
+        "Justin"
+      ],
+      "priority": "high",
+      "channelId": "UCPjNBjflYl0-HQtUvOx0Ibw"
+    },
+    {
+      "id": "my-first-million",
+      "name": "My First Million",
+      "youtubeUrl": "https://www.youtube.com/@MyFirstMillionPod",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCxoRKax_0vHaulMbceZtAwA",
+      "category": "startup",
+      "agentRouting": [
+        "Justin"
+      ],
+      "priority": "high",
+      "channelId": "UCxoRKax_0vHaulMbceZtAwA"
+    },
+    {
+      "id": "ras-mic",
+      "name": "Ras Mic",
+      "youtubeUrl": "https://www.youtube.com/@rasmic",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCBX__dPYqDFqAN4QcWbnUbw",
+      "category": "design",
+      "agentRouting": [
+        "Steve",
+        "Justin"
+      ],
+      "priority": "high",
+      "channelId": "UCBX__dPYqDFqAN4QcWbnUbw"
+    },
+    {
+      "id": "starter-story",
+      "name": "Starter Story",
+      "youtubeUrl": "https://www.youtube.com/@StarterStory",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UChhw6DlKKTQ9mYSpTfXUYqA",
+      "category": "startup",
+      "agentRouting": [
+        "Justin"
+      ],
+      "priority": "medium",
+      "channelId": "UChhw6DlKKTQ9mYSpTfXUYqA"
+    },
+    {
+      "id": "the-koerner-office",
+      "name": "The Koerner Office",
+      "youtubeUrl": "https://www.youtube.com/@TheKoernerOffice",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzjpCGEXR7BU-_SJSl59CGQ",
+      "category": "marketing",
+      "agentRouting": [
+        "Steve",
+        "Justin"
+      ],
+      "priority": "medium",
+      "channelId": "UCzjpCGEXR7BU-_SJSl59CGQ"
+    },
+    {
+      "id": "stephen-pope",
+      "name": "Stephen G Pope",
+      "youtubeUrl": "https://www.youtube.com/@stephengpope",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCIg2taLnC9X6LRP1k3kukOA",
+      "category": "operations",
+      "agentRouting": [
+        "Thomas"
+      ],
+      "priority": "medium",
+      "channelId": "UCIg2taLnC9X6LRP1k3kukOA"
+    },
+    {
+      "id": "diary-of-a-ceo",
+      "name": "Diary of a CEO",
+      "youtubeUrl": "https://www.youtube.com/@TheDiaryOfACEO",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCnjgxChqYYnyoqO4k_Q1d6Q",
+      "category": "startup",
+      "agentRouting": [
+        "Justin"
+      ],
+      "priority": "medium",
+      "channelId": "UCnjgxChqYYnyoqO4k_Q1d6Q"
+    },
+    {
+      "id": "cody-schneider",
+      "name": "Cody Schneider",
+      "youtubeUrl": "https://www.youtube.com/@codyschneiderx",
+      "rssUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCjNrOMGm7_ODMMBS-71xBcA",
+      "category": "marketing",
+      "agentRouting": [
+        "Steve"
+      ],
+      "priority": "high",
+      "channelId": "UCjNrOMGm7_ODMMBS-71xBcA"
+    }
+  ],
+  "digest": {
+    "daily": {
+      "schedule": "1:00 PM PST",
+      "cronUtc": "0 21 * * *",
+      "actions": [
+        "scan_rss",
+        "detect_new",
+        "summarize",
+        "extract_actions",
+        "route_agents"
+      ]
+    },
+    "weekly": {
+      "schedule": "Sunday 10:00 AM PST",
+      "cronUtc": "0 18 * * 0",
+      "actions": [
+        "summarize_week",
+        "highlight_trends",
+        "propose_actions"
+      ]
+    }
+  },
+  "transcriptApi": "supadata",
+  "transcriptPolicy": "on_demand_only"
+}

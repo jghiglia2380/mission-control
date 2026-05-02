@@ -10,24 +10,25 @@ import {
 } from '@heroicons/react/24/outline';
 
 const stats = [
-  { name: 'Active Tasks', value: '12', icon: ClipboardDocumentListIcon, change: '+3 this week', changeType: 'positive' },
-  { name: 'Scheduled Jobs', value: '8', icon: CalendarDaysIcon, change: '2 today', changeType: 'neutral' },
-  { name: 'Projects', value: '5', icon: FolderIcon, change: '1 near completion', changeType: 'positive' },
-  { name: 'Documents', value: '47', icon: DocumentTextIcon, change: '+12 this month', changeType: 'positive' },
+  { name: 'Active Tasks', value: '9', icon: ClipboardDocumentListIcon, change: '5 Justin / 4 Thomas', changeType: 'neutral' },
+  { name: 'AI Agents', value: '7', icon: CalendarDaysIcon, change: 'Thomas, Steve, Scout, Sheila, Atlas, Wall-E, Reed', changeType: 'positive' },
+  { name: 'States Sales-Ready', value: '34/36', icon: FolderIcon, change: 'NY + OH need fixes', changeType: 'positive' },
+  { name: 'Confirmed ARR', value: '$4K', icon: DocumentTextIcon, change: 'Dale + Clinton PS', changeType: 'neutral' },
 ];
 
 const recentActivity = [
-  { id: 1, action: 'Completed task', description: 'Generated Q1 revenue report', time: '2 min ago', status: 'success' },
-  { id: 2, action: 'New document', description: 'PFL Academy launch checklist', time: '15 min ago', status: 'info' },
-  { id: 3, action: 'Scheduled job', description: 'Daily email digest at 9:00 AM', time: '1 hour ago', status: 'info' },
-  { id: 4, action: 'Project update', description: 'Launchpad redesign - 75% complete', time: '2 hours ago', status: 'warning' },
-  { id: 5, action: 'Memory saved', description: 'Captured meeting notes with Barry', time: '3 hours ago', status: 'success' },
+  { id: 1, action: 'Market scan', description: 'TX/CA/CO HOT for K-4 supplemental literacy (Explore daytime version)', time: '30 min ago', status: 'success' },
+  { id: 2, action: 'CA deadline found', description: 'ELA/ELD adoption forms due Mar 11 — call CDE about late entry', time: '1 hour ago', status: 'warning' },
+  { id: 3, action: 'FL research', description: 'Social Studies adoption opens June 1. PFL qualifies. 3 regional consortia mapped.', time: '1 hour ago', status: 'info' },
+  { id: 4, action: 'Strategy pivot', description: 'Cold email dead. Distribution partner model replaces it. CO 35% bounce rate.', time: 'Yesterday', status: 'warning' },
+  { id: 5, action: 'Wall-E operational', description: '25+ extractions stored, priority gate working, 9 pending corrections', time: 'Yesterday', status: 'success' },
 ];
 
 const upcomingTasks = [
-  { id: 1, title: 'Review landing page copy', project: 'PFL Academy', dueIn: '2 hours', priority: 'high' },
-  { id: 2, title: 'Send weekly digest email', project: 'Operations', dueIn: '4 hours', priority: 'medium' },
-  { id: 3, title: 'Update curriculum database', project: 'K-4 Curriculum', dueIn: 'Tomorrow', priority: 'low' },
+  { id: 1, title: '📞 Call CDE — late ELA/ELD submission', project: 'Project Explore', dueIn: 'Tomorrow AM', priority: 'high' },
+  { id: 2, title: '📞 Call FL FDOE — Social Studies adoption', project: 'PFL Academy', dueIn: 'Tomorrow AM', priority: 'high' },
+  { id: 3, title: 'Build daytime Explore demo', project: 'Project Explore', dueIn: 'This week', priority: 'high' },
+  { id: 4, title: '📞 Call MCH Strategic Data', project: 'Distribution', dueIn: 'This week', priority: 'medium' },
 ];
 
 export default function Dashboard() {
@@ -128,7 +129,7 @@ export default function Dashboard() {
       <div className="mt-8 card p-6 bg-gradient-to-r from-[--primary-light] to-white">
         <h2 className="text-lg font-semibold text-[--secondary] mb-2">Mission Statement</h2>
         <p className="text-[--text-secondary] italic">
-          "Build an autonomous organization of AI agents that produce value 24/7, enabling freedom, travel, and the Italian lifestyle."
+          "Build an autonomous organization of AI agents that produce value 24/7, enabling freedom, travel, and the Italian lifestyle. Target: $500K ARR."
         </p>
       </div>
     </div>
